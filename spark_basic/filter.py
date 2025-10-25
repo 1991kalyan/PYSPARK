@@ -25,4 +25,9 @@ df.createOrReplaceTempView("filter_opr")
 #     and EMPLOYEE_ID in (206,200,205)
 # """).show()
 
+#df.show()
+df.filter((col('JOB_ID').startswith('FI')) & (col("SALARY")<=lit(10000)))#.show()
 
+#df.filter("job_id like 'ST%' ").show()
+
+df.filter(col("EMPLOYEE_ID").contains (lit(110))).show()
